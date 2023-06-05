@@ -1,5 +1,5 @@
 ﻿import app = require('teem');
-import Jogo = require("../models/jogo");
+import Colecao = require("../models/colecao");
 import DataUtil = require("../utils/dataUtil");
 
 class IndexRoute {
@@ -17,7 +17,7 @@ class IndexRoute {
 		res.render('index/historico', {
 			dataInicial: DataUtil.horarioDeBrasiliaISO(-30 * 24 * 60 * 60),
 			dataFinal: DataUtil.horarioDeBrasiliaISO(),
-			jogos: await Jogo.listar()
+			colecoes: await Colecao.listar()
 		});
 	}
 

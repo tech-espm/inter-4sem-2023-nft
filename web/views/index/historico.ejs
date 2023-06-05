@@ -1,6 +1,6 @@
 ﻿<div class="container-fluid">
 	<h1 class="my-4">
-		Histórico de Jogo por Data
+		Histórico de Coleção por Data
 	</h1>
 
 	<div class="row">
@@ -10,12 +10,12 @@
 					<div class="row">
 						<div class="col-sm-4">
 							<div class="form-group">
-								<label for="idjogo">
-									Jogo
+								<label for="id">
+									Coleção
 								</label>
-								<select class="form-control" id="idjogo">
-									<% for (let i = 0; i < jogos.length; i++) { %>
-									<option value="<%= jogos[i].id %>"><%= jogos[i].nome %></option>
+								<select class="form-control" id="id">
+									<% for (let i = 0; i < colecoes.length; i++) { %>
+									<option value="<%= colecoes[i].id %>"><%= colecoes[i].name %></option>
 									<% } %>
 								</select>
 							</div>
@@ -44,9 +44,9 @@
 		<div class="col-sm-6">
 			<div class="card shadow h-100">
 				<div class="card-body">
-					<h2 id="h2Jogo" class="text-center mb-4"></h2>
+					<h2 id="h2Colecao" class="text-center mb-4"></h2>
 					<div class="text-center">
-						<img id="imgJogo" style="max-width: 100%;" />
+						<img id="imgColecao" style="max-width: 100%;" />
 					</div>
 				</div>
 			</div>
@@ -61,10 +61,10 @@
 
 <script type="text/javascript">
 
-	let jogosPorId = (function () {
-		let obj = {}, jogos = <%- JSON.stringify(jogos) %>;
-		for (let i = 0; i < jogos.length; i++) {
-			obj[jogos[i].id] = jogos[i];
+	let colecoesPorId = (function () {
+		let obj = {}, colecoes = <%- JSON.stringify(colecoes) %>;
+		for (let i = 0; i < colecoes.length; i++) {
+			obj[colecoes[i].id] = colecoes[i];
 		}
 		return obj;
 	})();
@@ -73,17 +73,17 @@
 		let div = document.getElementById("div-grafico");
 		div.innerHTML = '<canvas id="grafico-linha" style="height: 50vh;"></canvas>';
 
-		let h2Jogo = document.getElementById("h2Jogo");
-		let imgJogo = document.getElementById("imgJogo");
+		let h2Colecao = document.getElementById("h2Colecao");
+		let imgColecao = document.getElementById("imgColecao");
 
-		let jogo = jogosPorId[document.getElementById("idjogo").value];
-		h2Jogo.textContent = jogo.nome;
-		imgJogo.src = jogo.imagem;
+		let colecao = colecoesPorId[document.getElementById("id").value];
+		h2Colecao.textContent = colecao.nome;
+		imgColecao.src = colecao.image;
 
 		let labels = [], data = [], maximo = 0;
 
 		try {
-			let response = await fetch(`/api/jogo/listarPosicaoPorData?idjogo=${encodeURIComponent(document.getElementById("idjogo").value)}&dataInicial=${encodeURIComponent(document.getElementById("dataInicial").value)}&dataFinal=${encodeURIComponent(document.getElementById("dataFinal").value)}`);
+			let response = await fetch(`/api/colecao/listarPosicaoPorData?id=${encodeURIComponent(document.getElementById("id").value)}&dataInicial=${encodeURIComponent(document.getElementById("dataInicial").value)}&dataFinal=${encodeURIComponent(document.getElementById("dataFinal").value)}`);
 			if (!response.ok) {
 				alert("Erro ao buscar os dados!");
 				return;
@@ -96,15 +96,15 @@
 			}
 
 			for (let i = 0; i < dados.length; i++) {
-				labels.push(dados[i].data);
-				if (maximo < dados[i].posicao)
-					maximo = dados[i].posicao;
+				labels.push(dados[i].date);
+				if (maximo < dados[i].ranking)
+					maximo = dados[i].ranking;
 			}
 
 			maximo++;
 
 			for (let i = 0; i < dados.length; i++) {
-				data.push(maximo - dados[i].posicao);
+				data.push(maximo - dados[i].ranking);
 			}
 
 		} catch (ex) {

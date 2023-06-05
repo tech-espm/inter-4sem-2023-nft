@@ -36,7 +36,8 @@ CREATE TABLE IF NOT EXISTS dailyReport (
 
     PRIMARY KEY (id),
     UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE,
-    INDEX collection_id_idx (collection_id ASC) VISIBLE,
+    INDEX collection_id_date_idx (collection_id ASC, date ASC) VISIBLE,
+	INDEX date_ranking_idx (date ASC, ranking ASC) VISIBLE,
     CONSTRAINT collection_id
     FOREIGN KEY (collection_id)
     REFERENCES collection (id)

@@ -1,6 +1,6 @@
 ﻿<div class="container-fluid">
 	<h1 class="my-4">
-		Top 10 Jogos por Data
+		Top 10 Coleções por Data
 	</h1>
 
 	<div class="card shadow my-4">
@@ -35,7 +35,7 @@
 		let labels = [], data = [];
 
 		try {
-			let response = await fetch("/api/jogo/listarTop10PorData?data=" + encodeURIComponent(document.getElementById("data").value));
+			let response = await fetch("/api/colecao/listarTop10PorData?data=" + encodeURIComponent(document.getElementById("data").value));
 			if (!response.ok) {
 				alert("Erro ao buscar os dados!");
 				return;
@@ -48,8 +48,8 @@
 			}
 
 			for (let i = 0; i < dados.length; i++) {
-				labels.push(dados[i].nome);
-				data.push(11 - dados[i].posicao);
+				labels.push(dados[i].name);
+				data.push(11 - dados[i].ranking);
 			}
 
 		} catch (ex) {
