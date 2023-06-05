@@ -1,5 +1,6 @@
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import Session
+import datetime
 
 from safeData import connection_string
 
@@ -9,9 +10,10 @@ engine = create_engine(connection_string)
 def createCollection(data):
 
     with Session(engine) as session, session.begin():
-        
-        session.execute(
-            text("INSERT INTO collection (name, image) VALUES (:name, :image)"), data)
+        try:
+            session.execute(text("INSERT INTO collection (name, image) VALUES (:name, :image)"), data)
+        finally:
+            return 
 
 
 def obtainCollection(name):
@@ -22,6 +24,14 @@ def obtainCollection(name):
         colecao = session.execute(
             text("SELECT id, name, image FROM collection WHERE name = :name"), report).first()
         return colecao
+
+
+def deleteCollection(name):
+    with Session(engine) as session, session.begin():
+        try:
+            session.execute(text("DELETE FROM collection WHERE name = :name"), {'name': name})
+        finally:
+            return
 
 
 def listCollections():
@@ -35,13 +45,23 @@ def listCollections():
         return collections
 
 
+def existReportForToday():
+    with Session(engine) as session:
+        today = {
+            'date': datetime.datetime.now().strftime('%Y-%m-%d')
+        }
+        report = session.execute(text("SELECT collection_name FROM dailyReport WHERE date = :date"), today).all()
+
+        return report
+
+
 def createDailyReport(data):
 
     with Session(engine) as session, session.begin():
         reports = session.execute(text("SELECT * FROM dailyReport"))
     for report in reports:
-        # item[9] = data relatório já existente
-        # item[2] = nome da coleção do relatório já existente
+        # report[9] = data relatório já existente
+        # report[2] = nome da coleção do relatório já existente
         # relatorio[1] = nome da coleção do relatório a ser criado
         if (str(report[9]) == data['date'] and report[2] == data['name']):
             print(f'Já existe um relatório {data["name"]} para hoje ({data["date"]})!')

@@ -1,3 +1,3 @@
-SELECT * FROM dailyReport
--- DELETE FROM dailyReport where id = 3
--- SELECT * from collection
+SELECT *
+FROM dailyReport
+WHERE date = '2023-06-04'

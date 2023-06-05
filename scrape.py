@@ -21,7 +21,6 @@ def scrape(continuation = '', index = 0):
     for collection in collections:
         #Craindo local na lista e dicionário para popular
         data.append([])
-        print(index)
         data[index] = {
             'rank': collection['rank']['1day'],
             'name': collection['name'],
@@ -41,4 +40,6 @@ def scrape(continuation = '', index = 0):
         continuation = f'&continuation={response["continuation"]}'
         scrape(continuation, index)
 
+    if len(data) == 0:
+        raise ValueError('Não foi possível obter os dados da API')
     return data
