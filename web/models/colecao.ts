@@ -22,7 +22,7 @@ class Colecao {
 	public static async listarTop10PorData(data: string): Promise<any[]> {
 		return app.sql.connect(async (sql) => {
 			return sql.query(`
-				select dr.ranking, c.id, c.name, c.image
+			select dr.ranking, c.id, c.name, c.image
 				from dailyreport dr
 				inner join collection c on c.id = dr.collection_id
 				where dr.date = ? and dr.ranking <= 10

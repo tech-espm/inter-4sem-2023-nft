@@ -77,8 +77,9 @@
 		let imgColecao = document.getElementById("imgColecao");
 
 		let colecao = colecoesPorId[document.getElementById("id").value];
-		h2Colecao.textContent = colecao.nome;
+		h2Colecao.textContent = colecao.name;
 		imgColecao.src = colecao.image;
+		imgColecao.alt = colecao.name;
 
 		let labels = [], data = [], maximo = 0;
 
@@ -118,9 +119,9 @@
 				labels: labels,
 				datasets: [{
 					label: "Posição",
-					backgroundColor: "#4e73df",
-					hoverBackgroundColor: "#2e59d9",
-					borderColor: "#4e73df",
+					backgroundColor: "#27374D",
+					hoverBackgroundColor: "#27374D",
+					borderColor: "#27374D",
 					data: data,
 				}],
 			},
@@ -187,11 +188,11 @@
 				},
 				tooltips: {
 					titleMarginBottom: 10,
-					titleFontColor: '#6e707e',
+					titleFontColor: '#27374D',
 					titleFontSize: 14,
-					backgroundColor: "rgb(255,255,255)",
-					bodyFontColor: "#858796",
-					borderColor: '#dddfeb',
+					backgroundColor: "#27374D",
+					bodyFontColor: "#27374D",
+					borderColor: '#27374D',
 					borderWidth: 1,
 					xPadding: 15,
 					yPadding: 15,

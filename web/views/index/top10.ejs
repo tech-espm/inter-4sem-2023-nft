@@ -49,7 +49,7 @@
 
 			for (let i = 0; i < dados.length; i++) {
 				labels.push(dados[i].name);
-				data.push(11 - dados[i].ranking);
+				data.push(11 - dados[i].average_ranking);
 			}
 
 		} catch (ex) {
@@ -63,9 +63,9 @@
 				labels: labels,
 				datasets: [{
 					label: "Posição",
-					backgroundColor: "#4e73df",
-					hoverBackgroundColor: "#2e59d9",
-					borderColor: "#4e73df",
+					backgroundColor: "#27374D",
+					hoverBackgroundColor: "#526D82",
+					borderColor: "#27374D",
 					data: data,
 				}],
 			},
@@ -132,11 +132,11 @@
 				},
 				tooltips: {
 					titleMarginBottom: 10,
-					titleFontColor: '#6e707e',
+					titleFontColor: '#27374D',
 					titleFontSize: 14,
 					backgroundColor: "rgb(255,255,255)",
-					bodyFontColor: "#858796",
-					borderColor: '#dddfeb',
+					bodyFontColor: "#27374D",
+					borderColor: '#27374D',
 					borderWidth: 1,
 					xPadding: 15,
 					yPadding: 15,
