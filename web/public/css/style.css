@@ -7,6 +7,7 @@
 
 body {
     color: white;
+    background-color: var(--third);
 }
 
 .nav-link, .navbar-brand {
@@ -52,6 +53,18 @@ body {
 .rodape {
     padding: 1rem;
     text-align: center;
+}
+
+.margin-style {
+    margin-top: 2.5rem;
+}
+
+.flex-style {
+    display: flex;
+}
+
+.card-container {
+    flex: 1;
 }
 /* 
 .limitador {

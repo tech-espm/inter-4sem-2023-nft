@@ -1,0 +1,207 @@
+﻿<div class="container-fluid">
+	<h1 class="my-4">
+		Top 10 Coleções
+	</h1>
+	<div class="container">
+		<div class="row margin-style">
+			<div class="col">
+				<div class="card shadow h-100">
+					<div class="card-body flex-style">
+						<div class="card-container">
+							<h4 class="text-center mb-4 h2Colecao"></h4>
+							<div class="text-center">
+								<img class="imgColecao" style="max-width: 150px;" />
+							</div>
+						</div>
+						<div class="card-container">
+							<p class="text-center ranking"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-6 offset-md-2 col-lg-6 offset-lg-0">
+				<div class="card shadow h-100">
+					<div class="card-body flex-style">
+						<div class="card-container">
+							<h4 class="text-center mb-4 h2Colecao"></h4>
+							<div class="text-center">
+								<img class="imgColecao" style="max-width: 150px;" />
+							</div>
+						</div>
+						<div class="card-container">
+							<p class="text-center ranking"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row margin-style">
+			<div class="col-6">
+				<div class="card shadow h-100">
+					<div class="card-body flex-style">
+						<div class="card-container">
+							<h4 class="text-center mb-4 h2Colecao"></h4>
+							<div class="text-center">
+								<img class="imgColecao" style="max-width: 150px;" />
+							</div>
+						</div>
+						<div class="card-container">
+							<p class="text-center ranking"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-6 offset-md-2 col-lg-6 offset-lg-0">
+				<div class="card shadow h-100">
+					<div class="card-body flex-style">
+						<div class="card-container">
+							<h4 class="text-center mb-4 h2Colecao"></h4>
+							<div class="text-center">
+								<img class="imgColecao" style="max-width: 150px;" />
+							</div>
+						</div>
+						<div class="card-container">
+							<p class="text-center ranking"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row margin-style">
+			<div class="col-6">
+				<div class="card shadow h-100">
+					<div class="card-body flex-style">
+						<div class="card-container">
+							<h4 class="text-center mb-4 h2Colecao"></h4>
+							<div class="text-center">
+								<img class="imgColecao" style="max-width: 150px;" />
+							</div>
+						</div>
+						<div class="card-container">
+							<p class="text-center ranking"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-6 offset-md-2 col-lg-6 offset-lg-0">
+				<div class="card shadow h-100">
+					<div class="card-body flex-style">
+						<div class="card-container">
+							<h4 class="text-center mb-4 h2Colecao"></h4>
+							<div class="text-center">
+								<img class="imgColecao" style="max-width: 150px;" />
+							</div>
+						</div>
+						<div class="card-container">
+							<p class="text-center ranking"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row margin-style">
+			<div class="col-6">
+				<div class="card shadow h-100">
+					<div class="card-body flex-style">
+						<div class="card-container">
+							<h4 class="text-center mb-4 h2Colecao"></h4>
+							<div class="text-center">
+								<img class="imgColecao" style="max-width: 150px;" />
+							</div>
+						</div>
+						<div class="card-container">
+							<p class="text-center ranking"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-6 offset-md-2 col-lg-6 offset-lg-0">
+				<div class="card shadow h-100">
+					<div class="card-body flex-style">
+						<div class="card-container">
+							<h4 class="text-center mb-4 h2Colecao"></h4>
+							<div class="text-center">
+								<img class="imgColecao" style="max-width: 150px;" />
+							</div>
+						</div>
+						<div class="card-container">
+							<p class="text-center ranking"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row margin-style">
+			<div class="col-6">
+				<div class="card shadow h-100">
+					<div class="card-body flex-style">
+						<div class="card-container">
+							<h4 class="text-center mb-4 h2Colecao"></h4>
+							<div class="text-center">
+								<img class="imgColecao" style="max-width: 150px;" />
+							</div>
+						</div>
+						<div class="card-container">
+							<p class="text-center ranking"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-6 offset-md-2 col-lg-6 offset-lg-0">
+				<div class="card shadow h-100">
+					<div class="card-body flex-style">
+						<div class="card-container">
+							<h4 class="text-center mb-4 h2Colecao"></h4>
+							<div class="text-center">
+								<img class="imgColecao" style="max-width: 150px;" />
+							</div>
+						</div>
+						<div class="card-container">
+							<p class="text-center ranking"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/public/chart.js/chart.min.js"></script>
+
+<script type="text/javascript">
+	async function buscar() {
+
+		let data =[];
+		let h2Colecoes = document.getElementsByClassName("h2Colecao");
+		let imgColecoes = document.getElementsByClassName("imgColecao");
+		let pColecoes = document.getElementsByClassName("ranking");
+
+		try {
+			let response = await fetch("/api/colecao/listarTop10");
+			if (!response.ok) {
+				alert("Erro ao buscar os dados!");
+				return;
+			}
+
+			let dados = await response.json();
+			if (!dados || !dados.length) {
+				alert("Sem dados!");
+				return;
+			}
+			
+			for (let i = 0; i < dados.length; i++) {
+				h2Colecoes[i].textContent = dados[i].name;
+				imgColecoes[i].src = dados[i].image;
+				imgColecoes[i].alt = dados[i].name;
+				pColecoes[i].textContent = dados[i].average_ranking + ' - ' + dados[i].avg_floorSale.toFixed(2);
+
+			}
+
+		} catch (ex) {
+			alert("Erro ao atualizar: " + ex.message);
+			return;
+		};
+	}
+
+	buscar();
+</script>

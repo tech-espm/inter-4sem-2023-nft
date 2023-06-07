@@ -19,6 +19,19 @@ class Colecao {
 		});
 	}
 
+	public static async listarTop10(): Promise<any[]> {
+		return app.sql.connect(async (sql) => {
+			return sql.query(`
+			SELECT collection.name, collection.image, AVG(dailyReport.ranking) AS average_ranking, AVG(floorSale) as avg_floorSale
+				FROM collection
+				JOIN dailyReport ON collection.id = dailyReport.collection_id
+				GROUP BY collection.id, collection.name
+				ORDER BY average_ranking ASC
+				LIMIT 10;
+			`);
+		});
+	}
+
 	public static async listarTop10PorData(data: string): Promise<any[]> {
 		return app.sql.connect(async (sql) => {
 			return sql.query(`
@@ -26,7 +39,7 @@ class Colecao {
 				from dailyreport dr
 				inner join collection c on c.id = dr.collection_id
 				where dr.date = ? and dr.ranking <= 10
-				order by dr.ranking
+				order by dr.ranking;
 			`, [DataUtil.converterDataISO(data)]);
 		});
 	}

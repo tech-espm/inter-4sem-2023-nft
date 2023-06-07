@@ -13,6 +13,10 @@ class ColecaoApiRoute {
 	public async listarTop10PorData(req: app.Request, res: app.Response) {
 		res.json(await Colecao.listarTop10PorData(req.query["data"] as string));
 	}
+
+	public async listarTop10(req: app.Request, res: app.Response) {
+		res.json(await Colecao.listarTop10());
+	}
 }
 
 export = ColecaoApiRoute;

@@ -12,6 +12,11 @@ class IndexRoute {
 			hoje: DataUtil.horarioDeBrasiliaISO()
 		});
 	}
+	public async top(req: app.Request, res: app.Response) {
+		res.render('index/top', {
+			hoje: DataUtil.horarioDeBrasiliaISO()
+		});
+	}
 
 	public async historico(req: app.Request, res: app.Response) {
 		res.render('index/historico', {
