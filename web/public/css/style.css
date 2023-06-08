@@ -13,10 +13,18 @@ body {
 .nav-link, .navbar-brand {
     color: #fff;
     transition: all 0.3s ease-in-out;
+    
+    font-weight: bold;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+   
+    
 }
 
 .nav-link:hover, .navbar-brand:hover {
     color: rgba(39, 55, 77, 0.5);
+    text-decoration: underline;
 }
 
 
@@ -48,10 +56,11 @@ body {
 .card {
     background-color: var(--forth);
     color: black;
+    display: flex;
 }
 
 .rodape {
-    padding: 1rem;
+    padding: 10px;
     text-align: center;
 }
 
@@ -71,3 +80,17 @@ body {
     max-width: 1260px;
     margin: 0 auto;
 } */
+.my-4text{
+    color: var(--first);
+    font-size:20px;
+}
+.my-4license{
+    margin-top: 300px;
+    color: var(--third);
+    text-decoration: underline;
+    text-align:justify;
+}
+.my-4title{
+    font-size: 30px;
+    color: var(--first)
+}
