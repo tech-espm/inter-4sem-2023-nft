@@ -5,20 +5,44 @@
     --forth: #DDE6ED;
 }
 
+
+
 body {
     color: white;
     background-color: var(--third);
 }
 
+.navbar {
+    position: fixed;
+    z-index: 1;
+    background-color: var(--third);
+    width: 100%;
+    box-shadow: 0 0 1rem var(--first);
+}
 .nav-link, .navbar-brand {
-    color: #fff;
+    color: var(--third);
     transition: all 0.3s ease-in-out;
+}
+a {
+    cursor: pointer;
 }
 
 .nav-link:hover, .navbar-brand:hover {
     color: rgba(39, 55, 77, 0.5);
 }
 
+.navbar-nav {
+    width: 100%;
+    justify-content: space-around;
+}
+
+.first {
+    color: var(--first) !important;
+}
+
+.white {
+    color: white !important;
+}
 
 #imgColecao {
     max-height: 100px;
@@ -35,6 +59,7 @@ body {
 
 .corpo-principal {
     flex: 1 1 auto;
+    padding-top: 60px;
 }
 
 .my-4 {
@@ -51,7 +76,7 @@ body {
 }
 
 .rodape {
-    padding: 1rem;
+    padding: 2rem;
     text-align: center;
 }
 
