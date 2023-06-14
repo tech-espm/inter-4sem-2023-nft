@@ -22,11 +22,11 @@ class Colecao {
 	public static async listarTop10(): Promise<any[]> {
 		return app.sql.connect(async (sql) => {
 			return sql.query(`
-			SELECT collection.name, collection.image, AVG(dailyReport.ranking) AS average_ranking, AVG(floorSale) as avg_floorSale
-				FROM collection
-				JOIN dailyReport ON collection.id = dailyReport.collection_id
-				GROUP BY collection.id, collection.name
-				ORDER BY average_ranking ASC
+			SELECT c.name, c.image, AVG(dr.ranking) AS avg_ranking, AVG(dr.floorSale) as avg_floorSale, AVG(dr.volumeChange) as avg_volumeChange
+				FROM collection c
+				JOIN dailyReport dr ON c.id = dr.collection_id
+				GROUP BY c.id, c.name
+				ORDER BY avg_ranking ASC
 				LIMIT 10;
 			`);
 		});
