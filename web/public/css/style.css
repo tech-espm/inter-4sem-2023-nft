@@ -22,8 +22,9 @@ body {
 .nav-link, .navbar-brand {
     color: var(--third);
     transition: all 0.3s ease-in-out;
-    
-    font-weight: bold;
+    font-size: 1.3rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: lighter;
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
@@ -60,7 +61,7 @@ a {
 .principal {
     background: var(--third);
     min-height: 100vh;
-    box-shadow: 0 0 1rem;
+    /* box-shadow: 0 0 1rem; */
     display: flex;
     flex-direction: column;
 }
@@ -75,6 +76,11 @@ a {
 }
 
 .basic {
+    min-height: 75vh;
+    padding: 50px;
+}
+
+.basic2 {
     height: 75vh;
 }
 
@@ -82,11 +88,6 @@ a {
     background-color: var(--forth);
     color: black;
     display: flex;
-}
-
-.rodape {
-    padding: 1rem;
-    text-align: center;
 }
 
 .margin-style {
@@ -99,6 +100,14 @@ a {
 
 .card-container {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-container p {
+    padding-left: 40px;
+    text-align: left;
 }
 /* 
 .limitador {
@@ -118,4 +127,44 @@ a {
 .my-4title{
     font-size: 30px;
     color: var(--first)
+}
+
+.btn-secondary {
+    background-color: var(--second);
+    border-color: var(--second);
+}
+
+.h2-name {
+    margin-top: 25px;
+}
+
+.text-basic {
+    font-size: 1em;
+    margin-top: -10px;
+}
+
+.rodape {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+figure {
+    width: 150px;
+    margin-top: 10px;
+}
+
+figure img {
+    width: 100%;
+}
+
+/* create a responsive media query when screen is smaller then 768px */
+@media screen and (max-width: 768px) {
+    /* second child of class row have 50px of margin top */
+    .col:nth-child(2n) {
+        margin-top: 2.5rem !important;
+    }
 }

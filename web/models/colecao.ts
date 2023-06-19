@@ -22,7 +22,7 @@ class Colecao {
 	public static async listarTop10(): Promise<any[]> {
 		return app.sql.connect(async (sql) => {
 			return sql.query(`
-			SELECT c.name, c.image, AVG(dr.ranking) AS avg_ranking, AVG(dr.floorSale) as avg_floorSale, AVG(dr.volumeChange) as avg_volumeChange
+			SELECT c.name, c.image, ROUND(AVG(dr.ranking),1) AS avg_ranking, AVG(dr.floorSale) as avg_floorSale, AVG(dr.volumeChange) as avg_volumeChange, ROUND(AVG(dr.ownerCount),0) as avg_ownerCount, ROUND(AVG(dr.tokenCount),0) as avg_tokenCount, ROUND(AVG(onSaleCount),0) as avg_onSaleCount
 				FROM collection c
 				JOIN dailyReport dr ON c.id = dr.collection_id
 				GROUP BY c.id, c.name

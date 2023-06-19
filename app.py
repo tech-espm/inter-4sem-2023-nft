@@ -16,3 +16,4 @@ def main():
 if __name__ == '__main__':
     main()
     # print(sql.existReportForToday())
+    # print(sql.obtainCollection('WarWarPanks'))
