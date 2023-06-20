@@ -3,23 +3,59 @@
 		NFT Analyzer
 	</h1>
 	<div class="card shadow my-4 basic">
-		<h1 class ="my-4title">
-			Descrição do projeto
-		</h1>
-		<h3 class = "my-4text">
-			A raspagem de dados de coleções NFT envolve a coleta automatizada de informações sobre as diferentes coleções de NFTs disponíveis em várias plataformas. As coleções de NFTs podem ser criadas por artistas, criadores de jogos, músicos, marcas famosas e muitos outros, e podem incluir arte digital exclusiva, itens virtuais colecionáveis ​​ou qualquer outro tipo de ativo digital único.
-<br>
-Este projeto permite obter dados valiosos sobre as coleções de NFTs, como nome da coleção, rank diário, imagem, volume, número total de itens na coleção, preço médio dos itens, contagem de donos e muito mais. Essas informações podem ser úteis para investidores, entusiastas de criptomoedas, colecionadores e pesquisadores que desejam entender melhor o mercado de NFTs.
-		</br>
-</h3>
-
-		<div class = "my-4license">
-			<p>
-			Este projeto é licenciado sob a [MIT License](https://github.com/tech-espm/misc-template/blob/main/LICENSE).
-			</p>
+		<div>
+			<section>
+				<h1 class ="my-4title">
+					Descrição do projeto
+				</h1>
+				<p class = "my-4text margin-basic">
+					A raspagem de dados de coleções NFT envolve a coleta automatizada de informações sobre as diferentes coleções de NFTs disponíveis em várias plataformas. As coleções de NFTs podem ser criadas por artistas, criadores de jogos, músicos, marcas famosas e muitos outros, e podem incluir arte digital exclusiva, itens virtuais colecionáveis ​​ou qualquer outro tipo de ativo digital único.
+				</p>
+				<p class = "my-4text my-4text-no-margin">
+					Este projeto permite obter dados valiosos sobre as coleções de NFTs, como nome da coleção, rank diário, imagem, volume, número total de itens na coleção, preço médio dos itens, contagem de donos e muito mais. Essas informações podem ser úteis para investidores, entusiastas de criptomoedas, colecionadores e pesquisadores que desejam entender melhor o mercado de NFTs.
+				</p>
+			</section>
+			<div class = "my-4license">
+				<p>
+				Este projeto é licenciado sob a [MIT License](https://github.com/tech-espm/misc-template/blob/main/LICENSE).
+				</p>
+			</div>
 		</div>
+		<figure>
+			<img class="myImg" src="" alt="">
+		</figure>
 	</div>
 	
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	async function buscar() {
+		img = document.getElementsByClassName("myImg");
+		try {
+			let response = await fetch("/api/colecao/listar");
+			if (!response.ok) {
+				alert("Erro ao buscar os dados!");
+				return;
+			}
+
+			let dados = await response.json();
+			if (!dados || !dados.length) {
+				alert("Sem dados!");
+				return;
+			}
+			let i = Math.floor(Math.random() * dados.length);
+			img[0].src = dados[i].image;
+			img[0].alt = dados[i].name;
+			console.log(img[0].src)
+
+
+		} catch (ex) {
+			alert("Erro ao atualizar: " + ex.message);
+			return;
+		};
+	};
+
+	buscar();
+</script>

@@ -3,21 +3,26 @@
     --second: #526D82;
     --third: #9DB2BF;
     --forth: #DDE6ED;
+    --fifth: #BF8D30;
+    --sixth: #99B4BF;
+    --seventh: #5D7A8C;
+    --eight: #253C59;
+    --ninth: #C2AD39;   
 }
 
 
 
 body {
     color: white;
-    background-color: var(--third);
+    background-color: var(--first);
 }
 
 .navbar {
     position: fixed;
     z-index: 1;
-    background-color: var(--third);
+    background-color: var(--first);
     width: 100%;
-    box-shadow: 0 0 1rem var(--first);
+    box-shadow: 0 0 1rem var(--third);
 }
 .nav-link, .navbar-brand {
     color: var(--third);
@@ -26,7 +31,7 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: lighter;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 20px;
     padding: 10px;
    
     
@@ -36,17 +41,17 @@ a {
 }
 
 .nav-link:hover, .navbar-brand:hover {
-    color: rgba(39, 55, 77, 0.5);
+    color: var(--ninth);
     text-decoration: underline;
 }
 
 .navbar-nav {
     width: 100%;
-    justify-content: space-around;
+    justify-content: right;
 }
 
 .first {
-    color: var(--first) !important;
+    color: var(--fifth) !important;
 }
 
 .white {
@@ -59,7 +64,7 @@ a {
 
 
 .principal {
-    background: var(--third);
+    background: var(--first);
     min-height: 100vh;
     /* box-shadow: 0 0 1rem; */
     display: flex;
@@ -68,16 +73,31 @@ a {
 
 .corpo-principal {
     flex: 1 1 auto;
-    padding-top: 60px;
+    padding-top: 70px;
 }
 
 .my-4 {
-    color: var(--first);
+    color: var(--forth);
 }
 
 .basic {
     min-height: 75vh;
-    padding: 50px;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    column-gap: 50px;
+}
+.basic div {
+    flex: 1;
+
+}
+.basic figure {
+    flex: 0.5;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .basic2 {
@@ -116,16 +136,27 @@ a {
 } */
 .my-4text{
     color: var(--first);
-    font-size:20px;
+    font-size: 1.5em;
+    color: #000;
+
 }
+
+.margin-basic {
+    margin-top: 1rem;
+}
+
+.my-4text-no-margin {
+    margin-top: -0.75rem;
+}
+
 .my-4license{
-    margin-top: 300px;
+    margin-top: 75px;
     color: var(--third);
     text-decoration: underline;
     text-align:justify;
 }
 .my-4title{
-    font-size: 30px;
+    font-size: 3em;
     color: var(--first)
 }
 
